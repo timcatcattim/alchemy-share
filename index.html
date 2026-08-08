@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>造物清單</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; }
+
+#login {
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; flex-direction: column; gap: 12px;
+}
+#login input {
+    padding: 10px 16px; font-size: 16px; border: 1px solid #444;
+    border-radius: 8px; background: #2a2a3e; color: #fff; text-align: center;
+}
+#login button {
+    padding: 10px 32px; font-size: 16px; border: none; border-radius: 8px;
+    background: #e67e22; color: #fff; cursor: pointer;
+}
+#login button:hover { background: #d35400; }
+#login .error { color: #e74c3c; font-size: 14px; min-height: 20px; }
+
+#content { display: none; max-width: 600px; margin: 0 auto; padding: 24px; }
+h1 { text-align: center; margin-bottom: 8px; color: #f39c12; }
+.time { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+ul { list-style: none; }
+ul li {
+    padding: 10px 16px; margin-bottom: 4px;
+    background: #2a2a3e; border-radius: 6px;
+    border-left: 3px solid #e67e22;
+}
+</style>
+</head>
+<body>
+
+<div id="login">
+    <h2 style="color:#f39c12;">🔒 造物清單</h2>
+    <input type="password" id="pwd" placeholder="請輸入密碼" onkeydown="if(event.key==='Enter')check()">
+    <button onclick="check()">進入</button>
+    <div class="error" id="err"></div>
+</div>
+
+<div id="content">
+    <h1>🧪 造物清單</h1>
+    <div class="time">更新時間：2026/08/09 01:54</div>
+    <ul>
+<li>進階火焰法師</li>
+<li>火焰心法</li>
+<li>內功真氣</li>
+<li>火焰教</li>
+<li>冰火模型</li>
+<li>黑焰術</li>
+<li>燃燒法術</li>
+<li>劍炎</li>
+<li>烈焰劍氣</li>
+<li>火焰劍法</li>
+<li>焚天劍法</li>
+<li>焚天劍訣</li>
+<li>沈仲</li>
+<li>三國演義續傳</li>
+<li>三國演義續集</li>
+<li>東漢史</li>
+<li>續唐書</li>
+<li>將軍列傳</li>
+<li>隋唐續史</li>
+<li>三顧茅廬</li>
+<li>傳世劍</li>
+<li>傳家劍</li>
+<li>楊素</li>
+<li>隋軍將領</li>
+<li>鳳凰劍法</li>
+<li>怪人二十面相</li>
+<li>衣冠禽獸</li>
+<li>關帝頌</li>
+<li>頌壽</li>
+<li>諸葛廟</li>
+<li>臥龍吟</li>
+<li>肉鬆米糕</li>
+<li>唐亡</li>
+<li>西藏史</li>
+<li>伊朗總統</li>
+<li>蜀皇帝</li>
+<li>王莽</li>
+<li>名賢</li>
+<li>醫道</li>
+<li>死對頭</li>
+<li>軍事強國</li>
+<li>科技共和國</li>
+<li>大英百科全書</li>
+<li>西藏自治區</li>
+<li>輻射病患</li>
+<li>金國之戰</li>
+<li>伊朗戰爭</li>
+<li>吸血鬼王國</li>
+<li>什葉教派</li>
+<li>什葉</li>
+<li>玉女素心劍法</li>
+<li>玉女素心劍</li>
+<li>金庸系列</li>
+<li>金輪法王</li>
+<li>武林傳人</li>
+<li>阿朱</li>
+<li>蕭峰</li>
+<li>長生龍</li>
+<li>雙子角色</li>
+<li>英雄服裝</li>
+<li>無頭騎士異聞錄</li>
+<li>俗人</li>
+<li>祆教教義</li>
+<li>陳平</li>
+<li>馬伕</li>
+<li>綜藝大家庭</li>
+<li>陳星</li>
+<li>言情小說家</li>
+<li>台灣人物</li>
+<li>散文獎</li>
+<li>文學貢獻</li>
+<li>已故小說家</li>
+<li>藝術作品</li>
+<li>台灣畫作</li>
+<li>淚劇</li>
+<li>門派爭霸</li>
+<li>馴蛇師</li>
+<li>馴蛇</li>
+<li>火劍門</li>
+<li>金蛇門</li>
+<li>金蛇劍法</li>
+<li>金蛇劍</li>
+<li>碧血</li>
+<li>雷劍術</li>
+<li>謀殺小說</li>
+<li>丹師</li>
+<li>丹房</li>
+<li>烈焰劍法</li>
+<li>無辜</li>
+<li>平反昭雪</li>
+<li>冤屍</li>
+<li>重劍</li>
+<li>信念之劍</li>
+<li>重力劍</li>
+<li>劍屑</li>
+<li>化繁為簡</li>
+<li>古典推理</li>
+<li>經典密室</li>
+<li>冰劍秘籍</li>
+<li>冰劍法</li>
+<li>魔獸模型</li>
+<li>魔法怪獸圖鑑</li>
+<li>僵屍模型</li>
+<li>烤肉模具</li>
+<li>獅吼功</li>
+<li>書封</li>
+<li>變身英雄卡</li>
+<li>法術模型</li>
+<li>咒語模型</li>
+<li>圖鑑奇蹟</li>
+<li>奇蹟病</li>
+<li>喪屍圍城</li>
+<li>神蹟病</li>
+<li>過招</li>
+<li>少林門徒</li>
+<li>少林弟子</li>
+<li>少林掌門</li>
+<li>綱目</li>
+<li>古墓派掌門</li>
+<li>時空圖鑑</li>
+<li>家族圖鑑</li>
+<li>聖經圖鑑</li>
+<li>變身面具</li>
+<li>果醬圖鑑</li>
+<li>太空機器人圖鑑</li>
+<li>火獸圖鑑</li>
+<li>雪豹圖鑑</li>
+<li>冰狼圖鑑</li>
+<li>雪狼圖鑑</li>
+<li>球星圖鑑</li>
+<li>屍體圖鑑</li>
+<li>汙染圖鑑</li>
+<li>金庸作品集</li>
+<li>草地植物</li>
+<li>武術大全</li>
+<li>春秋小說集</li>
+<li>小說熱潮</li>
+<li>災難小說熱潮</li>
+<li>日記選讀</li>
+<li>日記全集</li>
+<li>悲劇合輯</li>
+<li>沉浸式悲劇</li>
+<li>醫劇</li>
+<li>恐怖合輯</li>
+<li>恐怖選集</li>
+<li>推理選集</li>
+<li>宮廷小說集</li>
+<li>小說封面</li>
+<li>律政小說選集</li>
+<li>律政小說集</li>
+<li>律政小說</li>
+<li>統計書</li>
+<li>研究評論</li>
+<li>殭屍選集評論</li>
+<li>青春文選</li>
+<li>殭屍選集</li>
+<li>醫學選讀</li>
+<li>醫學文集</li>
+<li>醫學文學</li>
+<li>醫學劇評論</li>
+<li>選讀</li>
+<li>文獻導讀</li>
+<li>書評集</li>
+<li>醫學派系</li>
+<li>醫學流派</li>
+<li>小說合輯</li>
+<li>吸血鬼小說集</li>
+<li>進階副本</li>
+<li>隨機地城</li>
+<li>十字軍傳奇</li>
+<li>復仇小說集</li>
+<li>復仇小說</li>
+<li>心靈小說集</li>
+<li>心靈小說</li>
+<li>耽美虐戀</li>
+<li>虐戀合集</li>
+<li>劣質小說</li>
+<li>豪門小說集</li>
+<li>勵志小說集</li>
+<li>殭屍文集</li>
+<li>垃圾小說</li>
+<li>院感</li>
+<li>成語故事</li>
+<li>醫院小說集</li>
+<li>醫院小說</li>
+<li>醫門</li>
+<li>修真群</li>
+<li>門派爭鬥</li>
+<li>聖光功法</li>
+<li>門派內鬥</li>
+<li>修真社群</li>
+<li>黑焰心法</li>
+<li>黑焰教</li>
+<li>教派戰爭</li>
+<li>宗主</li>
+<li>作業集</li>
+<li>圖畫書合輯</li>
+<li>耽美集</li>
+<li>武俠合集</li>
+<li>仙俠小說集</li>
+<li>穿越文集</li>
+<li>冒險小說集</li>
+<li>科幻小說集</li>
+<li>修真小說合輯</li>
+<li>情色合輯</li>
+<li>青春文集</li>
+<li>宗教文集</li>
+<li>禪經集</li>
+<li>佛經選集</li>
+<li>佛經選</li>
+<li>經典繪本</li>
+<li>少林派</li>
+<li>少林內功</li>
+<li>少林拳</li>
+<li>經文爭議</li>
+<li>火獸</li>
+<li>少林門派之爭</li>
+<li>掌門之爭</li>
+<li>掌門位</li>
+<li>門派爭奪</li>
+<li>少林宗師</li>
+<li>少林教派之爭</li>
+<li>禪武</li>
+<li>少林足球</li>
+<li>褻瀆經典</li>
+<li>褻瀆聖經</li>
+<li>褻瀆新約</li>
+<li>異端封印</li>
+<li>教派之爭</li>
+<li>龍神話</li>
+<li>鳳凰血脈</li>
+<li>盜版武俠小說</li>
+<li>不死咒</li>
+<li>死靈禁術</li>
+<li>情色巨作</li>
+<li>奇幻大師</li>
+<li>傳奇作家</li>
+<li>閱讀體驗</li>
+<li>通讀</li>
+<li>穿越感</li>
+<li>閱讀修真小說</li>
+<li>揮棍</li>
+<li>棍術</li>
+<li>棍法</li>
+<li>鈍器</li>
+<li>鈍劍</li>
+<li>蝕痕</li>
+<li>倚天劍譜</li>
+<li>武俠奇幻</li>
+<li>金庸武俠</li>
+<li>小說全集</li>
+<li>醫學科幻</li>
+<li>成長小說</li>
+<li>教化小說</li>
+<li>涅槃功法</li>
+<li>涅槃宗</li>
+<li>治癒系小說</li>
+<li>小妖</li>
+<li>雪貓幼崽</li>
+<li>異世界產物</li>
+<li>異世界冒險小說</li>
+<li>科幻穿越</li>
+<li>龍鳳胎</li>
+<li>降龍掌</li>
+<li>掌法宗師</li>
+<li>掌法</li>
+<li>掌擊</li>
+<li>吸血術</li>
+<li>鳳凰功法</li>
+<li>鳳凰門派</li>
+<li>掌門</li>
+<li>降龍十八掌</li>
+<li>古墓劍法</li>
+<li>金庸小說</li>
+<li>武俠連載</li>
+<li>江湖高手</li>
+<li>古墓心法</li>
+<li>古墓派</li>
+<li>神雕俠侶</li>
+<li>神鵰</li>
+<li>龍血丹</li>
+<li>劍俠</li>
+<li>神馬</li>
+<li>騎龍術</li>
+<li>龍血功法</li>
+<li>不死心法</li>
+<li>師門</li>
+<li>機甲術</li>
+<li>血脈功法</li>
+<li>不死獸</li>
+<li>馴獸門派</li>
+<li>獸師</li>
+<li>武館</li>
+<li>靈火功法</li>
+<li>教法</li>
+<li>修行法門</li>
+<li>正道</li>
+<li>正派</li>
+<li>學習技巧</li>
+<li>弟子</li>
+<li>上位門派</li>
+<li>法門</li>
+<li>拜師</li>
+<li>劍派</li>
+<li>門派</li>
+<li>仙劍奇俠傳加強版</li>
+<li>加強版</li>
+<li>仙劍奇俠傳</li>
+<li>仙俠小說</li>
+<li>修真境界</li>
+<li>修真小說</li>
+<li>暗黑奇幻小說</li>
+<li>暗黑奇幻</li>
+<li>奇幻恐怖小說</li>
+<li>奇幻恐怖</li>
+<li>玄幻小說</li>
+<li>防霧設施</li>
+<li>霧災</li>
+<li>霉味</li>
+<li>霧城</li>
+<li>大霧</li>
+<li>霧害</li>
+
+    </ul>
+</div>
+
+<script>
+function check() {
+    var p = document.getElementById('pwd').value;
+    if (p === '0812') {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+    } else {
+        document.getElementById('err').textContent = '密碼錯誤';
+    }
+}
+</script>
+</body>
+</html>
