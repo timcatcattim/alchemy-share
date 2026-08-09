@@ -25,7 +25,14 @@ body { font-family: "Microsoft JhengHei", sans-serif; background: #1a1a2e; color
 
 #content { display: none; max-width: 600px; margin: 0 auto; padding: 24px; }
 h1 { text-align: center; margin-bottom: 8px; color: #f39c12; }
-.time { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+.time { text-align: center; color: #888; font-size: 13px; margin-bottom: 16px; }
+#search {
+    width: 100%; padding: 10px 16px; font-size: 15px;
+    border: 1px solid #444; border-radius: 8px;
+    background: #2a2a3e; color: #fff; margin-bottom: 16px;
+}
+#search::placeholder { color: #888; }
+.count { text-align: right; color: #888; font-size: 13px; margin-bottom: 8px; }
 ul { list-style: none; }
 ul li {
     padding: 10px 16px; margin-bottom: 4px;
@@ -45,8 +52,16 @@ ul li {
 
 <div id="content">
     <h1>🧪 造物清單</h1>
-    <div class="time">更新時間：2026/08/09 16:36</div>
-    <ul>
+    <div class="time">更新時間：2026/08/09 21:49</div>
+    <input type="text" id="search" placeholder="搜尋造物..." oninput="filter()">
+    <div class="count" id="count"></div>
+    <ul id="list">
+<li>🪄 宗門法術</li>
+<li>🔥 火焰宗師</li>
+<li>🔥 火球高手</li>
+<li>🧙‍♂️🔥 高階火焰法師</li>
+<li>🔥 火球術大師</li>
+<li>🔥 強火球</li>
 <li>🔥🗡 炎刀斬</li>
 <li>🔥 紅熱</li>
 <li>🗡️ 進階火焰刀法</li>
@@ -383,9 +398,21 @@ function check() {
     if (p === '0812') {
         document.getElementById('login').style.display = 'none';
         document.getElementById('content').style.display = 'block';
+        filter();
     } else {
         document.getElementById('err').textContent = '密碼錯誤';
     }
+}
+function filter() {
+    var q = document.getElementById('search').value.toLowerCase();
+    var items = document.getElementById('list').getElementsByTagName('li');
+    var shown = 0;
+    for (var i = 0; i < items.length; i++) {
+        var match = items[i].textContent.toLowerCase().indexOf(q) > -1;
+        items[i].style.display = match ? '' : 'none';
+        if (match) shown++;
+    }
+    document.getElementById('count').textContent = shown + ' / ' + items.length;
 }
 </script>
 </body>
